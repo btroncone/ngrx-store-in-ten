@@ -7,7 +7,7 @@ import {Store, provideStore} from '@ngrx/store';
 import {people} from "./reducers/people";
 import {filter} from "./reducers/filter";
 import {Observable} from "rxjs/Observable";
-import {AsyncPipe} from "angular2/common";
+//import {AsyncPipe} from "angular2/common";
 
 @Component({
 	selector: 'app',
@@ -30,8 +30,9 @@ import {AsyncPipe} from "angular2/common";
       >
       </person-list>
     `,
-	directives: [PersonList, PersonInput, FilterSelect],
-	pipes: [AsyncPipe]
+	directives: [PersonList, PersonInput, FilterSelect]
+    //Edit: This is not necessary, the AsyncPipe is already accessible.
+	//pipes: [AsyncPipe]
 })
 export class App {
 	public people;
