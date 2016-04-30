@@ -1,7 +1,7 @@
 {
   "name": "ng2-ngrx-counter",
   "version": "0.0.2",
-  "description": "angular 2 ngrx counter example",
+  "description": "ngrx-store-in-ten",
   "main": "",
   "scripts": {
     "build": "npm run webpack --colors --display-error-details --display-cached",
