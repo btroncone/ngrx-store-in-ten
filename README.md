@@ -1,5 +1,5 @@
 # @ngrx/store in 10 minutes
-Demo code for egghead.io lesson.
+Demo code for [egghead.io lesson](https://egghead.io/lessons/angular-2-ngrx-store-in-10-minutes).
 
 ##Getting Started
 ```bash
