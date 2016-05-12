@@ -5,7 +5,7 @@ import {Component, Input, Output, EventEmitter, ChangeDetectionStrategy} from 'a
     template: `
       <ul>
         <li 
-          *ngFor="#person of people"
+          *ngFor="#person of listFilter(people)"
           [class.attending]="person.attending"
         >
            {{person.name}} - Guests: {{person.guests}}
@@ -20,8 +20,20 @@ import {Component, Input, Output, EventEmitter, ChangeDetectionStrategy} from 'a
 })
 export class PersonList {
     @Input() people;
+    @Input() filter;
     @Output() addGuest = new EventEmitter();
     @Output() removeGuest = new EventEmitter();
     @Output() removePerson = new EventEmitter();
     @Output() toggleAttending = new EventEmitter();
+
+    listFilter(list){
+        switch(this.filter){
+            case 'SHOW_ATTENDING':
+                return list.filter(person => person.attending);
+            case 'SHOW_WITH_GUESTS':
+                return list.filter(person => person.guests > 0);
+            default:
+                return list;
+        }
+    }
 }
