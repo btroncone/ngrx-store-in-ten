@@ -1,11 +1,11 @@
-import {Component, Input, Output, EventEmitter, ChangeDetectionStrategy} from 'angular2/core';
+import {Component, Input, Output, EventEmitter, ChangeDetectionStrategy} from '@angular/core';
 
 @Component({
     selector: 'person-list',
     template: `
       <ul>
         <li 
-          *ngFor="#person of people"
+          *ngFor="let person of people"
           [class.attending]="person.attending"
         >
            {{person.name}} - Guests: {{person.guests}}

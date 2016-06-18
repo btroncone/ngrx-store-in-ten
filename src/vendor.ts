@@ -1,7 +1,13 @@
-import 'angular2/platform/browser';
-import 'angular2/platform/common_dom';
-import 'angular2/core';
-import 'angular2/common';
-import 'angular2/http';
-import 'angular2/router';
+import 'core-js/es6';
+import 'core-js/es7/reflect';
 import 'rxjs';
+require('zone.js/dist/zone');
+
+// Typescript emit helpers polyfill
+import 'ts-helpers';
+
+// Angular 2
+import '@angular/platform-browser-dynamic';
+import '@angular/core';
+import '@angular/common';
+import '@angular/http';

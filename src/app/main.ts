@@ -1,9 +1,9 @@
-import {Component} from 'angular2/core';
-import {bootstrap} from 'angular2/platform/browser';
+import {Component} from '@angular/core';
+import {bootstrap} from '@angular/platform-browser-dynamic';
+import {Store, provideStore} from '@ngrx/store';
 import {PersonList} from './components/person-list';
 import {PersonInput} from './components/person-input';
 import {FilterSelect} from './components/filter-select';
-import {Store, provideStore} from '@ngrx/store';
 import {people} from "./reducers/people";
 import {filter} from "./reducers/filter";
 import {Observable} from "rxjs/Observable";
@@ -44,7 +44,7 @@ export class App {
 		this.people = Observable.combineLatest(
 			_store.select('people'),
 			_store.select('filter'),
-			(people, filter) => {
+			(people : any[], filter) => {
 				return people.filter(filter);
 			}
 		)
